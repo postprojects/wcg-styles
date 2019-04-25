@@ -1,0 +1,172 @@
+$footer-mobile: 350px;
+$footer: 450px;
+
+footer.bottom {
+  font-size: 17px;
+  font-weight: 500;
+
+  @include medium-up {
+    font-size: 13px;
+  }
+
+  .bg {
+    color: $black;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    animation: psychedelic linear 15s infinite;
+    filter: saturate(0.4);
+
+    & > .container {
+      position: relative;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      & > div {
+        width: 100%;
+      }
+
+      .top {
+        font-size: 13px;
+        line-height: 1.38;
+        font-weight: 500;
+
+        .left {
+          p {
+            margin-top: 0;
+
+            a {
+              border: 0;
+            }
+          }
+        }
+
+        .right {
+          @include medium-down {
+            width: 100%;
+          }
+        }
+      }
+
+      .middle {
+        svg {
+          width: 100%;
+          height: 100%;
+          max-width: 540px;
+          object-fit: contain;
+
+          &:hover {
+            stroke: $black;
+            stroke-width: 3px;
+            fill: transparent;
+            fill-opacity: 0;
+          }
+        }
+      }
+
+      .bottom {
+        @include medium-down {
+          display: block;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        @include medium-up {
+          padding-top: 100px;
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      text-transform: uppercase;
+      font-weight: 500;
+
+      @include medium-down {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+
+        & + li {
+          margin-top: 8px;
+        }
+      }
+
+      @include medium-up {
+        display: inline-block;
+
+        & + li {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  @include medium-down {
+    ul#menu-social {
+      width: 100%;
+
+      li {
+        display: inline-block;
+        max-width: none;
+        font-size: 10px;
+        line-height: 1.38;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        & + li {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    @extend small;
+
+    color: inherit;
+    font-weight: normal;
+    line-height: 1;
+
+    ul {
+      li {
+        text-transform: capitalize;
+        font-weight: inherit;
+
+        @include medium-down {
+          display: inline-block;
+          font-size: 10px;
+          line-height: 1.38;
+          font-weight: 500;
+          text-transform: uppercase;
+
+          & + li {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .attribution {
+      font-size: 8px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes psychedelic {
+  0% {
+    filter: hue-rotate(0deg) saturate(1.5) invert(0);
+  }
+
+  50% {
+    filter: hue-rotate(360deg) saturate(1.5) invert(0);
+  }
+
+  100% {
+    filter: hue-rotate(0deg) saturate(1.5) invert(0);
+  }
+}

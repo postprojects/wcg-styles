@@ -1,0 +1,230 @@
+.button,
+button {
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.86;
+  border-radius: 10px;
+  padding: 8px 13px 9px;
+  margin-bottom: $gap-m;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: text-bottom;
+
+  @include medium-up {
+    padding: 11px 14px 13px;
+    font-size: 14px;
+  }
+
+  & + .button,
+  & + button {
+    margin-left: $gap-m;
+  }
+
+  &.white {
+    background: $white;
+    color: $black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $black;
+      color: $white;
+      border: 1px solid;
+    }
+  }
+
+  &.black {
+    background: $black;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $white;
+      color: $black;
+      border: 1px solid $black;
+    }
+  }
+
+  &.large {
+    font-size: 18px;
+    padding: 8px 23px 11px;
+    border-radius: 10px;
+
+    @include medium-up {
+      font-size: 21px;
+      padding: 8px 28px 11px;
+      border-radius: 15px;
+    }
+
+    @include large-up {
+      font-size: 24px;
+      padding: 8px 35px 11px;
+      border-radius: 17px;
+    }
+  }
+
+  &.medium {
+    font-size: 12px;
+    line-height: 1.33;
+    padding: 8px 12px 9px;
+    border-radius: 10px;
+  }
+
+  &.small {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
+  &.outline {
+    border: 1px solid;
+    background: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $white;
+      color: $black;
+      border-color: $black;
+    }
+
+    &.active {
+      background: $black;
+      border-color: $black;
+      color: $white;
+    }
+  }
+
+  &.wide {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  &.wider {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+label {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 12px;
+  margin-bottom: 7px;
+
+  span,
+  & + span {
+    display: none;
+  }
+
+  &.radio-inline {
+    font-size: 15px;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea {
+  width: 100%;
+  max-width: 100%;
+  background: none;
+  box-shadow: none;
+  border-radius: 10px;
+  color: $black;
+  font-family: inherit;
+  font-size: 15px;
+  border: 1px solid;
+  padding: 7px 12px 8px;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+select {
+  appearance: none;
+  width: 100%;
+  max-width: 500px;
+  background: none;
+  box-shadow: none;
+  border-radius: 10px;
+  color: $black;
+  font-family: inherit;
+  font-size: 15px;
+  border: 1px solid;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background: $black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 17.5px;
+    right: 15px;
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: $white;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &:hover {
+    &::before {
+      background: $white;
+      border: 1px solid $black;
+    }
+
+    &::after {
+      border-color: $black;
+    }
+  }
+
+  select {
+    padding-right: 40px;
+    z-index: 3;
+  }
+}
+
+section.form {
+  background: $white;
+  color: $black;
+  overflow: hidden;
+  border-radius: 40px;
+
+  @include medium-up {
+    border-radius: 50px;
+  }
+
+  .wrapper {
+    padding: 50px 0;
+  }
+}

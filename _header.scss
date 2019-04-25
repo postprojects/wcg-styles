@@ -1,0 +1,180 @@
+$header-mobile: 71px;
+$header: 110px;
+
+header.top {
+  position: fixed;
+  width: 100vw;
+  height: $header-mobile;
+  padding-top: 12px;
+  padding-bottom: 13px;
+  z-index: 99;
+  white-space: nowrap;
+
+  @include medium-down {
+    background: $white;
+    color: $black;
+  }
+
+  @include medium-up {
+    position: relative;
+    padding-top: 22px;
+    padding-bottom: 16px;
+    height: $header;
+  }
+
+  .flex {
+    & > div {
+      flex: 1;
+    }
+  }
+
+  a.cart-toggle {
+    display: inline-block;
+    color: inherit;
+    padding: 15px;
+
+    .icon {
+      display: block;
+      width: 20px;
+      height: 18px;
+    }
+
+    &:not(.active) {
+      .icon.close {
+        display: none;
+      }
+    }
+
+    &.active {
+      .icon.open {
+        display: none;
+      }
+    }
+  }
+
+  a.brand {
+    svg {
+      width: 100%;
+      max-width: 146px;
+      height: 100%;
+      object-fit: contain;
+
+      @include medium-up {
+        max-width: 212px;
+        height: 100%;
+      }
+    }
+  }
+
+  a.menu-toggle {
+    display: inline-block;
+    padding: 15px;
+
+    .icon {
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+
+    &:not(.active) {
+      .icon.close {
+        display: none;
+      }
+    }
+
+    &.active {
+      .icon.open {
+        display: none;
+      }
+    }
+  }
+
+  ul {
+    padding-top: 2px;
+
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+
+      & + li {
+        margin-left: $gap;
+      }
+    }
+  }
+}
+
+#main {
+  @include medium-down {
+    padding-top: $header-mobile;
+  }
+}
+
+.menu-open {
+  height: 100vh;
+  overflow: hidden;
+
+  #mobile-menu {
+    right: 0;
+  }
+}
+
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -150vw;
+  bottom: 0;
+  width: 100vw;
+  padding-top: $header-mobile;
+  padding-bottom: $header-mobile;
+  background: $white;
+  color: $black;
+  transition: right 500ms ease-in-out;
+  z-index: 90;
+
+  @include medium-up {
+    display: none;
+  }
+
+  a.menu-close {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 25px;
+    font-size: 15px;
+    text-transform: uppercase;
+    z-index: 99;
+  }
+
+  .menu-mobile-container {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 50px $header-mobile;
+    height: 100%;
+    overflow: auto;
+
+    ul {
+      li {
+        padding-top: 10px;
+
+        &:nth-last-child(2) {
+          margin-top: $spacer-l;
+        }
+
+        a {
+          font-size: 19px;
+          line-height: 1.63;
+          font-weight: normal;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.small-only-spacer {
+  @include medium-down {
+    padding-top: $header-mobile;
+  }
+}
