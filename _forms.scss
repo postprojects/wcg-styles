@@ -87,6 +87,17 @@ button {
     border: 1px solid;
     background: transparent;
 
+    &.white-stroke {
+      border-color: $white;
+      color: $white;
+
+      &.active {
+        background: $white;
+        border-color: $white;
+        color: $black;
+      }
+    }
+
     &:hover,
     &:focus,
     &:active {
