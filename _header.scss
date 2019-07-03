@@ -25,6 +25,7 @@ header.top {
   .flex {
     & > div {
       flex: 1;
+      white-space: normal;
     }
   }
 
@@ -100,6 +101,17 @@ header.top {
 
       & + li {
         margin-left: $gap;
+      }
+
+      &.currency {
+        a {
+          opacity: 0.2;
+          margin-left: 3px;
+
+          &.active {
+            opacity: 1;
+          }
+        }
       }
     }
   }
