@@ -35,6 +35,10 @@ body {
     max-height: 100vh;
     overflow: hidden;
 
+    footer.bottom {
+      opacity: 0;
+    }
+
     & > .wrap {
       position: relative;
       width: 100vw;
@@ -47,8 +51,9 @@ body {
         right: 0;
         bottom: 0;
         left: 0;
-        // background: url(../images/loader.gif) no-repeat center center;
-        background-size: 75px;
+        background: url($image-path + 'loader.gif') no-repeat center center;
+        background-size: 100px;
+        filter: invert(1);
         display: flex;
         align-items: center;
         justify-content: center;
