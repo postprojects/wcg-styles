@@ -53,7 +53,6 @@ body {
         left: 0;
         background: url($image-path + 'loader.gif') no-repeat center center;
         background-size: 100px;
-        filter: invert(1);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -202,6 +201,14 @@ body.dark,
 body.error404 {
   background: $black;
   color: $white;
+
+  &:not(.loaded) {
+    & > .wrap {
+      &::before {
+        filter: invert(1);
+      }
+    }
+  }
 
   #mobile-menu {
     background: $black;

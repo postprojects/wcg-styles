@@ -3,6 +3,7 @@ button {
   appearance: none;
   outline: none;
   box-shadow: none;
+  background: transparent;
   border: 1px solid transparent;
   font-size: 12px;
   font-weight: 400;
@@ -124,8 +125,13 @@ button {
   }
 
   &.wide {
-    padding-left: 75px;
-    padding-right: 75px;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    @include medium-up {
+      padding-left: 75px;
+      padding-right: 75px;
+    }
   }
 
   &.wider {

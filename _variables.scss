@@ -126,6 +126,10 @@ $large: 1080px;
 
   &.two-col-all {
     grid-template-columns: 6fr 6fr;
+
+    .text-right {
+      text-align: right;
+    }
   }
 
   &.three-col {
@@ -155,11 +159,16 @@ $large: 1080px;
   }
 
   .offset-1 {
+    padding-right: 10px;
+    padding-left: 10px;
+
     @include medium-up {
       grid-column: 1/13;
     }
 
     @include large-up {
+      padding-left: 0;
+      padding-right: 0;
       grid-column: 2/12;
     }
   }
@@ -206,6 +215,10 @@ $large: 1080px;
     & > * {
       width: 100%;
       -webkit-column-break-inside: avoid;
+    }
+
+    .text-right {
+      text-align: right;
     }
   }
 

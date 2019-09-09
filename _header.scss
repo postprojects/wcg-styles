@@ -180,6 +180,33 @@ header.top {
           font-weight: normal;
           text-transform: uppercase;
         }
+
+        &.has-sub-menu {
+          position: relative;
+
+          & > a {
+            display: block;
+            width: 100%;
+
+            &::after {
+              content: "";
+              background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDI1IDE4Ij4gICAgPHBhdGggZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMjEuMjU5IDEwSDFhMSAxIDAgMSAxIDAtMmgyMC4yNTlsLTYuNTkzLTYuMTM4YS44NDguODQ4IDAgMCAxIDAtMS4yNDEuOTc4Ljk3OCAwIDAgMSAxLjMzMyAwbDguMjE1IDcuNjQ3YTEgMSAwIDAgMSAwIDEuNDY0bC04LjIxNSA3LjY0N2EuOTc4Ljk3OCAwIDAgMS0xLjMzMyAwIC44NDguODQ4IDAgMCAxIDAtMS4yNEwyMS4yNiAxMHoiLz48L3N2Zz4=) no-repeat center center;
+              background-size: 100%;
+              width: 25px;
+              height: 18px;
+              position: absolute;
+              top: 10px;
+              right: 0;
+            }
+          }
+
+          ul.sub-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100vw;
+          }
+        }
       }
     }
   }
