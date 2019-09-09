@@ -102,17 +102,6 @@ header.top {
       & + li {
         margin-left: $gap;
       }
-
-      &.currency {
-        a {
-          opacity: 0.2;
-          margin-left: 3px;
-
-          &.active {
-            opacity: 1;
-          }
-        }
-      }
     }
   }
 }
@@ -166,15 +155,15 @@ header.top {
     height: 100%;
     overflow: auto;
 
-    ul {
-      li {
+    & > ul {
+      & > li {
         padding-top: 10px;
 
         &:nth-last-child(2) {
           margin-top: $spacer-l;
         }
 
-        a {
+        & > a {
           font-size: 19px;
           line-height: 1.63;
           font-weight: normal;
@@ -190,24 +179,55 @@ header.top {
 
             &::after {
               content: "";
-              background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDI1IDE4Ij4gICAgPHBhdGggZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMjEuMjU5IDEwSDFhMSAxIDAgMSAxIDAtMmgyMC4yNTlsLTYuNTkzLTYuMTM4YS44NDguODQ4IDAgMCAxIDAtMS4yNDEuOTc4Ljk3OCAwIDAgMSAxLjMzMyAwbDguMjE1IDcuNjQ3YTEgMSAwIDAgMSAwIDEuNDY0bC04LjIxNSA3LjY0N2EuOTc4Ljk3OCAwIDAgMS0xLjMzMyAwIC44NDguODQ4IDAgMCAxIDAtMS4yNEwyMS4yNiAxMHoiLz48L3N2Zz4=) no-repeat center center;
-              background-size: 100%;
-              width: 25px;
+              background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA0IDgiPiAgICA8cGF0aCBmaWxsPSIjMEMwQzBDIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0wIDdsMy0zLTMtM1YwbDQgNC00IDR6Ii8+PC9zdmc+) no-repeat center center;
+              background-size: contain;
+              filter: invert(1);
+              transform: rotate(90deg);
+              width: 18px;
               height: 18px;
               position: absolute;
-              top: 10px;
+              top: 15px;
               right: 0;
+            }
+
+            &.active {
+              &::after {
+                transform: rotate(270deg);
+              }
             }
           }
 
           ul.sub-menu {
             display: none;
-            position: absolute;
-            top: 0;
-            left: 100vw;
+
+            &.active {
+              display: block;
+            }
+
+            a {
+              display: block;
+              width: 100%;
+              font-size: 12px;
+              margin-bottom: 4px;
+
+              &:first-child {
+                margin-top: 10px;
+              }
+            }
           }
         }
       }
+    }
+  }
+}
+
+.currency {
+  a {
+    opacity: 0.2;
+    margin-left: 3px;
+
+    &.active {
+      opacity: 1;
     }
   }
 }
