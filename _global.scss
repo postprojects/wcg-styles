@@ -109,6 +109,8 @@ img {
 figure {
   margin: 0 0 $spacer;
   overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   line-height: 0;
 
   img {
