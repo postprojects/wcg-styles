@@ -1,16 +1,6 @@
 $header-mobile: 71px;
 $header: 110px;
 
-@keyframes marquee {
-  from { 
-    transform: translateX(100%); 		
-  }
-
-  to {
-    transform: translateX(-100%); 
-  }
-}
-
 #announcement {
   position: fixed;
   z-index: 99;
@@ -20,7 +10,6 @@ $header: 110px;
   background: #ffea68;
   color: $black;
   padding: 14px 0 6px;
-  overflow: hidden;
   animation: slide 15s linear infinite;
 
   @include medium-up {
@@ -30,7 +19,7 @@ $header: 110px;
 
   .marquee {
     position: absolute;
-    transform:translateX(100%);
+    transform: translateX(100%);
     animation: marquee 15s linear infinite;
 
     p {
@@ -44,6 +33,16 @@ $header: 110px;
         font-size: 33px;
       }
     }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
   }
 }
 
