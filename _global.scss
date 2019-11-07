@@ -502,6 +502,8 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: 40px;
+  backface-visibility: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 
   @include medium-up {
     border-radius: 75px;
