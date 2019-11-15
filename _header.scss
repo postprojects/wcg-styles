@@ -10,7 +10,6 @@ $header: 110px;
   background: #ffea68;
   color: $black;
   padding: 9px 0 6px;
-  animation: slide 15s linear infinite;
 
   @include medium-up {
     position: relative;
@@ -18,12 +17,13 @@ $header: 110px;
   }
 
   .marquee {
+    width: 200%;
     position: absolute;
-    transform: translateX(100%);
-    animation: marquee 15s linear infinite alternate;
+    animation: marquee 15s linear infinite;
     white-space: nowrap;
 
     p {
+      display: inline-block;
       font-family: $souvenir;
       font-size: 18px;
       font-weight: 500;
@@ -39,11 +39,11 @@ $header: 110px;
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    left: 0;
   }
 
   100% {
-    transform: translateX(-100%);
+    left: -100%;
   }
 }
 
