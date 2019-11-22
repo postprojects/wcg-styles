@@ -196,6 +196,14 @@ ul.unstyled {
 #main {
   width: 100vw;
   min-height: calc(100vh - 115px - 475px);
+
+  &.announcement-enabled {
+    @include medium-down {
+      & > .container {
+        padding-top: 36px;
+      }
+    }
+  }
 }
 
 /* Themes */
