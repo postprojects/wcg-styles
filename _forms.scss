@@ -198,7 +198,7 @@ select {
   cursor: pointer;
 }
 
-.dropdown {
+.special-dropdown {
   position: relative;
   color: inherit;
   width: 100%;
@@ -247,6 +247,7 @@ select {
   select {
     height: 40px;
     border-radius: 10px;
+    line-height: 1;
     -webkit-appearance: none;
     padding-right: 40px;
     z-index: 3;
